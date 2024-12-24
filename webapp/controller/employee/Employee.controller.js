@@ -45,6 +45,14 @@ sap.ui.define(
             this.getRouter().getTargets().display("notFound");
           }
         },
+        onShowResume: function (oEvent) {
+          var oCtx = this.getView().getElementBinding().getBoundContext();
+          console.log(oCtx.getProperty("EmployeeID"));
+
+          this.getRouter().navTo("employeeResume", {
+            employeeId: oCtx.getProperty("EmployeeID"),
+          });
+        },
       }
     );
   }
