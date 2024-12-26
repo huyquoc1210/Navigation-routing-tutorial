@@ -87,7 +87,8 @@ sap.ui.define(
               var oSortItem = oEvent.getParameter("sortItem");
               this._oRouterArgs["?query"].sortField = oSortItem.getKey();
               this._oRouterArgs["?query"].sortDescending =
-                delete this._oRouterArgs["?query"].showDialog;
+                oEvent.getParameter("sortDescending");
+              delete this._oRouterArgs["?query"].showDialog;
               oRouter.navTo(
                 "employeeOverview",
                 this._oRouterArgs,
